@@ -16,9 +16,19 @@ namespace GameOfLife
     {
         public static Cell GetNewCell(Cell currentCell, int liveNeighbors)
         {
-            if (currentCell == Cell.Alive && liveNeighbors <= 2)
+            if (currentCell == Cell.Alive && liveNeighbors < 2)
             {
                 return Cell.Dead;
+            }
+
+            if (currentCell == Cell.Alive && liveNeighbors > 3)
+            {
+                return Cell.Dead;
+            }
+
+            if (currentCell == Cell.Dead && liveNeighbors == 3)
+            {
+                return Cell.Alive;
             }
 
             return currentCell;
