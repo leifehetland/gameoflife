@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameboardCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="World.cs" />
+    <Compile Include="Life.cs" />
+    <Compile Include="Gameboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

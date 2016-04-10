@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameOfLife;
 
-namespace GameOfLife
-{
     public enum Cell
     {
         Alive,
@@ -34,4 +33,3 @@ namespace GameOfLife
             return currentCell;
         }
     }
-}
