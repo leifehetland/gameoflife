@@ -9,13 +9,12 @@ namespace GameOfLife
     public class Cell
     {
         public bool IsAlive { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int neighbors { get; set; }
 
         public Cell()
         {
-            X = Int32.MinValue;
-            Y = Int32.MinValue;
+            IsAlive = false;
+            neighbors = 0;
         }
     }
 }

@@ -9,72 +9,100 @@ namespace GameOfLifeTests
     [TestClass]
     public class CellTests
     {
-        //[TestMethod]
-        //public void CanICreateACellInstance()
-        //{
-        //    //Arrange 
-        //    Cell Cell = new Cell();
+        [TestMethod]
+        public void CanICreateACellInstance()
+        {
+            //Arrange 
+            Cell cell = new Cell();
 
-        //    //Act
+            //Act
+            
 
-        //    //Assert
-        //    Assert.IsNotNull(Cell);
-        //}
+            //Assert
+            Assert.IsNotNull(cell);
+        }
 
-        //[TestMethod]
-        //public void LessThanTwoNeighborsDies()
-        //{
-        //    //Arrange 
-        //    Cell currentCell = Cell.Alive;
-        //    int liveNeighbors = 1;
+        [TestMethod]
+        public void CanICreateADeadCell()
+        {
+            //Arrange 
+            Cell cell = new Cell();
 
-        //    //Act
-        //    Cell result = Life.GetNewCell(currentCell, liveNeighbors);
+            //Act
+            var actual = cell.IsAlive;
+            var expected = false;
 
-        //    //Assert
-        //    Assert.AreEqual(Cell.Dead, result);
-        //}
+            //Assert
+            Assert.AreEqual(actual, expected);
+        }
 
-        //[TestMethod]
-        //public void TwoOrThreeLiveNeighborsLives()
-        //{
-        //    //Arrange 
-        //    Cell currentCell = Cell.Alive;
-        //    int liveNeighbors = 3;
+        [TestMethod]
+        public void CanICreateAnAliveCell()
+        {
+            //Arrange 
+            Cell cell = new Cell();
 
-        //    //Act
-        //    Cell result = Life.GetNewCell(currentCell, liveNeighbors);
+            //Act
+            cell.IsAlive = true;
+            var actual = cell.IsAlive;
+            var expected = true;
 
-        //    //Assert
-        //    Assert.AreEqual(Cell.Alive, result);
-        //}
 
-        //[TestMethod]
-        //public void MoreThanThreeNeighborsDies()
-        //{
-        //    //Arrange 
-        //    Cell currentCell = Cell.Alive;
-        //    int liveNeighbors = 4;
+            //Assert
+            Assert.AreEqual(actual, expected);
+        }
 
-        //    //Act
-        //    Cell result = Life.GetNewCell(currentCell, liveNeighbors);
+    //    [TestMethod]
+    //    public void LessThanTwoNeighborsDies()
+    //    {
+    //        //Arrange 
+    //        Cell currentCell = new Cell();
+            
 
-        //    //Assert
-        //    Assert.AreEqual(Cell.Dead, result);
-        //}
+    //        //Act
+            
 
-        //[TestMethod]
-        //public void ExactlyThreeNeighborsLives()
-        //{
-        //    //Arrange 
-        //    Cell currentCell = Cell.Dead;
-        //    int liveNeighbors = 3;
+    //        //Assert
+            
+    //    }
 
-        //    //Act
-        //    Cell result = Life.GetNewCell(currentCell, liveNeighbors);
+    //    [TestMethod]
+    //    public void TwoOrThreeLiveNeighborsLives()
+    //    {
+    //        //Arrange 
+            
 
-        //    //Assert
-        //    Assert.AreEqual(Cell.Alive, result);
-        //}
+    //        //Act
+            
+
+    //        //Assert
+            
+    //    }
+
+    //    [TestMethod]
+    //    public void MoreThanThreeNeighborsDies()
+    //    {
+    //        //Arrange 
+            
+
+    //        //Act
+            
+
+    //        //Assert
+            
+    //    }
+
+    //    [TestMethod]
+    //    public void ExactlyThreeNeighborsLives()
+    //    {
+    //        //Arrange 
+            
+
+    //        //Act
+            
+
+    //        //Assert
+            
+    //    }
     }
 }

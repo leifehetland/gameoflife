@@ -11,21 +11,7 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            var board = new Gameboard(20, 40);
-            var creator = new GameboardCreator();
-
-            for (int i = 0; i <= 100; i++)
-            {
-                board.Generations();
-                var output = creator.Creator(board);
-
-                Console.Clear();
-                foreach (var line in output)
-                {
-                    Console.WriteLine(line);
-                }
-                Thread.Sleep(2000);
-            }             
+            
         }
     }
 }
