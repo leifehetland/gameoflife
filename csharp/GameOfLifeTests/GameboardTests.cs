@@ -25,12 +25,15 @@ namespace GameofLifeTests
         public void CanICreateAGameBoardWithDimensions()
         {
             //Arrange 
-            Gameboard gameWorld = new Gameboard();
+            Gameboard gameboard = new Gameboard();
 
             //Act
+            var value = gameboard.gameWorld[5, 5];
+            var actual = value.IsAlive;
+            var expected = false;
 
             //Assert
-            Assert.IsNotNull(gameWorld);
+            Assert.AreEqual(actual, expected);
         }
 
     }

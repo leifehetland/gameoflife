@@ -11,11 +11,13 @@ public class Gameboard
 
     public Gameboard()
     {
+        gameWorld = new Cell[10, 10];
+
         for (int x = 0; x < 10; x++)
         {
             for (int y = 0; y < 10; y++)
             {
-                this.gameWorld[x, y] = new Cell();
+                gameWorld[x, y] = new Cell();
             }
         }
     }
