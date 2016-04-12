@@ -43,11 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellGeneration.cs" />
+    <Compile Include="CellMaker.cs" />
     <Compile Include="GameboardCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Life.cs" />
+    <Compile Include="Cell.cs" />
     <Compile Include="Gameboard.cs" />
+    <Compile Include="StaticListGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

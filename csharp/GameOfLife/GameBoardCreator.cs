@@ -7,24 +7,28 @@ using GameOfLife;
 
 public class GameboardCreator
 {
-    public List<string> Creator(Gameboard Gameboard)
+    public List<string> Creator(Gameboard gameboard)
     {
-        if (Gameboard == null)
+        if (gameboard == null)
         {
             throw new ArgumentNullException("Gameboard cannot be null");
         }
 
         var outputLine = new List<string>();
 
-        foreach (var row in Gameboard.Rows)
+        for (var y = 0; y < gameboard.Height; y++)
         {
-            int outputLength = row.Count;
-            var thisRow = Enumerable.Repeat(" ", outputLength).ToString();
-            outputLine.Add(thisRow);
-    {
+            var buffer = new StringBuilder();
 
-    }
+            for (var x = 0; x < gameboard.Width; x++)
+            {
+                var cell = gameboard.Board[x, y];
+                buffer.Append(cell.IsAlive ? "X" : "-");
+            }
+
+            outputLine.Add(buffer.ToString());
         }
+        return outputLine;
     }
 }
 
