@@ -13,12 +13,24 @@ namespace GameofLifeTests
         public void CanICreateAGameBoardInstance()
         {
             //Arrange 
-            Gameboard gameboard = new Gameboard();
+            Gameboard gameWorld = new Gameboard();
 
             //Act
 
             //Assert
-            
+            Assert.IsNotNull(gameWorld);
+        }
+
+        [TestMethod]
+        public void CanICreateAGameBoardWithDimensions()
+        {
+            //Arrange 
+            Gameboard gameWorld = new Gameboard();
+
+            //Act
+
+            //Assert
+            Assert.IsNotNull(gameWorld);
         }
 
     }
