@@ -65,12 +65,88 @@ namespace GameofLifeTests
             var expected = 2;
             var actual = gameboard.gameWorld[5, 6].neighbors;
 
+
             
 
             //Assert
             Assert.AreEqual(expected, actual );
         }
 
+        [TestMethod]
+        public void CanICreateABlinker()
+        {
+            //Arrange 
+            Gameboard gameboard = new Gameboard();
 
+            //Act
+            gameboard.gameWorld[5, 5].IsAlive = true;
+            gameboard.gameWorld[5, 6].IsAlive = true;
+            gameboard.gameWorld[5, 7].IsAlive = true;
+            gameboard.checkNeighbors();
+            gameboard.nextGeneration();
+            var expected = true;
+            var actual1 = gameboard.gameWorld[4, 6].IsAlive;
+            var actual2 = gameboard.gameWorld[5, 6].IsAlive;
+            var actual3 = gameboard.gameWorld[6, 6].IsAlive;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected, actual2);
+            Assert.AreEqual(expected, actual3);
+        }
+
+        [TestMethod]
+        public void CanICreateABlinkerPt2()
+        {
+            //Arrange 
+            Gameboard gameboard = new Gameboard();
+
+            //Act
+            gameboard.gameWorld[5, 5].IsAlive = true;
+            gameboard.gameWorld[5, 6].IsAlive = true;
+            gameboard.gameWorld[5, 7].IsAlive = true;
+            gameboard.checkNeighbors();
+            gameboard.nextGeneration();
+            gameboard.checkNeighbors();
+            gameboard.nextGeneration();
+            var expected = true;
+            var actual1 = gameboard.gameWorld[5, 5].IsAlive;
+            var actual2 = gameboard.gameWorld[5, 6].IsAlive;
+            var actual3 = gameboard.gameWorld[5, 7].IsAlive;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected, actual2);
+            Assert.AreEqual(expected, actual3);
+        }
+
+        [TestMethod]
+        public void CanICreateABlinkerAtTheEdge()
+        {
+            //Arrange 
+            Gameboard gameboard = new Gameboard();
+
+            //Act
+            gameboard.gameWorld[0, 9].IsAlive = true;
+            gameboard.gameWorld[0, 0].IsAlive = true;
+            gameboard.gameWorld[0, 1].IsAlive = true;
+            gameboard.checkNeighbors();
+            gameboard.nextGeneration();
+            var expected = true;
+            var actual1 = gameboard.gameWorld[9, 0].IsAlive;
+            var actual2 = gameboard.gameWorld[0, 0].IsAlive;
+            var actual3 = gameboard.gameWorld[1, 0].IsAlive;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected, actual2);
+            Assert.AreEqual(expected, actual3);
+        }
     }
 }

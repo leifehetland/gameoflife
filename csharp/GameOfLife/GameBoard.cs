@@ -68,9 +68,42 @@ public class Gameboard
             }
         }
     }
-int mod(int x, int m)
-{
-    return (x % m + m) % m;
-}
+
+    public void nextGeneration()
+    {
+        var nextGeneration = new Gameboard();
+
+        for (int x = 0; x < 10; x++)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                int count = this.gameWorld[x, y].neighbors;
+                bool living = this.gameWorld[x, y].IsAlive;
+
+                if (living && count < 2)
+                {
+                    nextGeneration.gameWorld[x, y].IsAlive = false;
+                }
+                if (living && (count == 2 || count == 3))
+                {
+                    nextGeneration.gameWorld[x, y].IsAlive = true;
+                }
+                if (living && count > 3)
+                {
+                    nextGeneration.gameWorld[x, y].IsAlive = false;
+                }
+                if (!living && count == 3)
+                {
+                    nextGeneration.gameWorld[x, y].IsAlive = true;
+                }
+            }
+        }
+        this.gameWorld = nextGeneration.gameWorld;
+    }
+
+    int mod(int x, int m)
+    {
+        return (x % m + m) % m;
+    }
 
 }
