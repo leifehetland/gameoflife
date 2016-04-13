@@ -148,5 +148,42 @@ namespace GameofLifeTests
             Assert.AreEqual(expected, actual2);
             Assert.AreEqual(expected, actual3);
         }
+
+        [TestMethod]
+        public void CanIConfirmDeadCellsWithBlinker()
+        {
+            //Arrange 
+            Gameboard gameboard = new Gameboard();
+
+            //Act
+            gameboard.gameWorld[5, 5].IsAlive = true;
+            gameboard.gameWorld[5, 6].IsAlive = true;
+            gameboard.gameWorld[5, 7].IsAlive = true;
+            gameboard.checkNeighbors();
+            gameboard.nextGeneration();
+            
+            var expected = false;
+            var actual1 = gameboard.gameWorld[5, 5].IsAlive; //Dead Cell
+            var actual2 = gameboard.gameWorld[5, 7].IsAlive; //Dead Cell
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected, actual2);
+        }
+
+        [TestMethod]
+        public void CanICreateAnInstanceOfGameboardToString()
+        {
+            //Arrange
+            Gameboard gameboard = new Gameboard();
+            var expected = gameboard.PutInConsole();
+
+            //Act
+
+            //Assert
+            Assert.IsNotNull(expected);
+        }
     }
 }

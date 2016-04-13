@@ -101,6 +101,21 @@ public class Gameboard
         this.gameWorld = nextGeneration.gameWorld;
     }
 
+    public String PutInConsole()
+    {
+        StringBuilder buildMyString = new StringBuilder();
+        for (int x = 0; x < 10; x++)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                buildMyString.Append(this.gameWorld[x, y].IsAlive ? "X" : "-");
+            }
+            buildMyString.AppendLine();
+        }
+        return buildMyString.ToString();
+    
+    }
+
     int mod(int x, int m)
     {
         return (x % m + m) % m;
