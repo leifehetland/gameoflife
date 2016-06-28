@@ -108,7 +108,7 @@ public class Gameboard
         {
             for (int y = 0; y < 10; y++)
             {
-                buildMyString.Append(this.gameWorld[x, y].IsAlive ? "X" : "-");
+                buildMyString.Append(this.gameWorld[x, y].IsAlive ? "O" : " ");
             }
             buildMyString.AppendLine();
         }

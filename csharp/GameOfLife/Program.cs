@@ -19,14 +19,21 @@ namespace GameOfLife
             gameboard.gameWorld[7, 4].IsAlive = true;
             gameboard.gameWorld[6, 3].IsAlive = true;
 
+            gameboard.gameWorld[1, 8].IsAlive = true;
+            gameboard.gameWorld[1, 9].IsAlive = true;
+            gameboard.gameWorld[2, 8].IsAlive = true;
+            gameboard.gameWorld[2, 9].IsAlive = true;
 
+            gameboard.gameWorld[2, 1].IsAlive = true;
+            gameboard.gameWorld[2, 2].IsAlive = true;
+            gameboard.gameWorld[2, 3].IsAlive = true;
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.Clear();
                 Console.WriteLine(gameboard.PutInConsole());
                 gameboard.checkNeighbors();
-                Thread.Sleep(2000);
+                Thread.Sleep(500);
                 gameboard.nextGeneration();
             }
 
